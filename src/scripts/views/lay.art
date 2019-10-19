@@ -1,0 +1,22 @@
+<div class="indexContainer">
+  <header>
+    <ul class="header">
+      <li class='goods'><a href="./" ></a></li>
+      <li class='categroy'></li>
+      <li class='usercenter'></li>
+      <li class="mycart"></li>
+    </ul>
+  </header>
+  <div class="searchBox">
+    <form action="#">
+      <div>
+        <input type="text" id="ipt" placeholder="试试搜索“香水”哦~~">
+        <a class="search"></a>
+      </div>
+    </form>
+  </div>
+  <main>
+     
+  </main>
+ 
+</div>

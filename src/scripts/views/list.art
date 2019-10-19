@@ -1,0 +1,46 @@
+<div class="indexContainer">
+    <header>
+        <ul class="header">
+            <li></li>
+            <li>
+                商品列表
+            </li>
+            <li></li>
+        </ul>
+    </header>
+   
+    <main>
+        <div class="main">
+            <div class="head">
+                    <img src="/assets/images/arrow.png" />
+                    <b>下拉刷新...</b>
+            </div>
+        <ul class="prdUl">
+            {{each list}}
+            <li class="prd-item" data-id="{{$value.goods_id}}">
+                <div class="prd-img">
+                    <img src="{{$value.thumb_url}}" alt="">
+                </div>
+                <div class="prd-desc">
+                    <div class="p-title">{{$value.goods_name}}</div>
+                    <div class="p-price">
+                        <span class="p-salep">￥{{$value.group_price/100}}</span>
+                        <span class="p-lowp">￥{{$value.normal_price/100}}</span>
+                    </div>
+                    <div class="p-like">{{$value.cnt}}</div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="foot">
+                <img src="/assets/images/arrow.png"/>
+                <b>上拉加载更多...</b>
+         </div>
+        </div>
+    </main>
+   
+
+
+
+
+</div>

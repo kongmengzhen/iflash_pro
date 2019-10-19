@@ -1,0 +1,49 @@
+<div class="indexContainer">
+    <header>
+        <ul class="header">
+            <li></li>
+            <li>
+                购物车
+            </li>
+            <li></li>
+        </ul>
+    </header>
+    <main>
+     
+        <div class="mycart-item">
+            {{each resls}}
+            <p class="store-name">
+                店铺：<span>柚子舍旗舰店</span>
+            </p>
+            <div class="item-desc" data-id="{{$value[0].prd_id}}">
+                    <!-- http://m.iflashbuy.com/themes/default/images/iconCart01.png -->
+                <div class="item-check"><img src="http://m.iflashbuy.com/themes/default/images/iconCart01.png" alt=""></div>
+                <div class="item-img"> <img src="{{$value[0].prdImg_url}}" alt=""></div>
+                <div class="item-middle">
+                    <div class="item-title">{{$value[0].prd_name}}</div>
+                    <form class="num-control" action="#">
+                            <input id="reduce" type="button" value="-">
+                            <input id="amount" type="button" value="{{$value[0].count}}">
+                            <input id="add" type="button" value="+">
+                   </form>
+                </div>
+                <div class="item-rt">
+                    <div class="item-price">{{$value[0].prd_price}}</div>
+                    <div class="item-delete"><img src="http://m.iflashbuy.com/themes/default/images/iconCart03.png" alt=""></div>
+
+                </div>
+            </div>
+            {{/each}}
+      
+    </div>
+    </main>
+
+    <footer>
+       <div class="money">
+        <div id="addCart">总金额<span>￥0.00</span></div>
+        <div id="addCart">总额<span>￥0.00</span></div>
+       </div>      
+        <div class="pay">结算</div>
+    </footer>
+
+</div>

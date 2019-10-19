@@ -1,0 +1,45 @@
+<div class="indexContainer">
+    <header>
+        <ul class="header">
+            <li></li>
+            <li>
+                <input type="text" class="ipt" placeholder="搜索商品">
+                <i class="yo-ico">&#xe611;</i>
+            </li>
+            <li></li>
+        </ul>
+    </header>
+    <main>
+        <ul class="g-list">
+            {{each list}}
+            <li class="g-item">
+                <div>
+                    <img src="{{$value.image_url}}" />
+                </div>
+                <div>
+                  {{$value.cate_name}}
+                </div>
+                <div class="select">
+                </div>
+
+            </li>
+            <li class="detail-li">
+                <div class="g-item-detail">
+                    <ul class="ul-detail">
+                        <li>零食果蔬</li>
+                        <li>粮油滋补</li>
+                        <li>滋补营养</li>
+                        <li>营养果蔬</li>
+                        <li>果蔬零食</li>
+                    </ul>
+
+
+                </div>
+            </li>
+            {{/each}}
+            
+        </ul>
+
+    </main>
+
+</div>

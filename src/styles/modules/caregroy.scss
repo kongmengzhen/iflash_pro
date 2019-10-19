@@ -1,0 +1,122 @@
+.indexContainer {
+    width: 100%;
+    header {
+        height: .44rem;
+        background: #df3132;
+        width: 100%;
+    }
+    .header {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+        width: 100%;
+        li:nth-child(1) {
+            width: .30rem;
+            height: .30rem;
+            background: url('http://m.iflashbuy.com/themes/default/images/icon_back.png') no-repeat center center;
+            background-size: contain;
+        }
+        li:nth-child(2) {
+            flex: 1 1 0;
+            display: flex;
+            input {
+                width: 100%;
+                height: .28rem;
+                border: none;
+                border-radius: 10px 0 0 10px;
+                padding: 0 2%;
+
+            }
+        }
+
+
+        .yo-ico {
+            display: block;
+            width: .25rem;
+            height: .28rem;
+            background: #fff;
+            text-align: center;
+            line-height: .28rem;
+            border-radius: 0 10px 10px 0;
+        }
+
+        li:nth-child(3) {
+            width:.30rem;
+            height: .20rem;
+            background: url('http://m.iflashbuy.com/themes/default/images/icon_more.png') no-repeat center center;
+            background-size: contain;
+            transform: rotate(180deg);
+        }
+        input {
+            flex: 1 1 0;
+        }
+    }
+}
+
+main {
+    .g-list {
+        margin: 10px auto;
+        width: 96%;
+        background: #fff;
+    }
+
+    .g-item {        
+        @include border(1px 1px 1px 1px, #D4D4D4);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background: #fff;
+        div:nth-child(1) {
+            width: .80rem;
+            img{
+                width: .45rem;
+                
+            }
+
+        }
+        div:nth-child(2) {
+            flex: 1 1 0;
+        }
+        div:nth-child(3) {
+            width: .25rem;
+            height: .20rem;         
+            background: url(http://m.iflashbuy.com/themes/default/images/search-list-cur.png)no-repeat center center;
+            background-size: 20px 15px;
+            padding-right: 50px;
+            
+        }
+    }
+
+    .g-item-detail {
+        width: 100%;
+        height: .8rem;
+        // display: none;
+
+        .ul-detail {
+            height: 1.00rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;           
+
+            li {
+                 align-items: center;
+                 width: 30%;
+
+            }
+        }
+    }
+    .detail-li{
+       
+        display: none;
+        
+    }
+
+    .up {
+        transform: rotate(180deg);
+
+    }
+
+}

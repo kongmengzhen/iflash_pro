@@ -1,0 +1,85 @@
+<div class="indexContainer">
+    <header>
+        <ul class="header">
+            <li></li>
+            <li>
+                商品详情
+            </li>
+            <li></li>
+        </ul>
+    </header>
+    <main>
+        <div class="content">
+            {{each tarlist}}
+            <div class="detail-desc">
+                <ul class="desc-img">
+                    <li><img src="{{$value.prdImg_url}}" alt="">
+                    </li>
+                </ul>
+
+                <div class="desc">
+                    <div class="desc-price">
+                        <span>{{$value.prd_saleprice}}</span>
+                        <span>{{$value.prd_price}}</span>
+                    </div>
+                    <ul class="desc-title">
+                        <li>{{$value.prd_name}}</li>
+                        <li><img src="http://m.iflashbuy.com/themes/default/images/iconProduct01dis.png" alt=""></li>
+                    </ul>
+                    <div class="desc-categroy">库存<span>92</span>件</div>
+
+
+                </div>
+                <ul class="desc-promise">
+                    <li><i></i> 正品保证</li>
+                    <li> <i></i>扫码既购</li>
+                    <li> <i></i>七天退货</li>
+                </ul>
+
+              
+
+            </div>
+            <!-- count -->
+            <div class="detail-prdcount">
+                <div>数量</div>
+                <form class="num-control" action="#">
+                    <input id="reduce" type="button" value="-">
+                    <input id="amount" type="button" value="1">
+                    <input id="add" type="button" value="+">
+                </form>
+            </div>
+            <div class="detail-teximg">
+                <div class="teximg-desc">
+
+                    <span>图文信息</span>
+                    <label></label>
+
+                </div>
+            </div>
+            <!--store  -->
+            <ul class="detail-store">
+                <li class="detail-stitle">
+                    <a href="#"><img src="http://img01.iflashbuy.com/img/M00/03/8E/CgoKGVRI4XSAbNYQAAFIiAsKByI647.png" alt=""></a>
+                </li>
+                <li>
+                    <div>柚子旗舰店</div>
+                    <div>闪购认证</div>
+                </li>
+                <li></li>
+
+            </ul>
+
+
+
+
+        </div>
+
+
+    </main>
+    <footer>
+        <div id="goMycart"><i id="total">{{$value.total}}</i></div>
+        <div id="addCart">加入购物车</div>
+        <div>立即购买</div>
+    </footer>
+    {{/each}}
+</div>

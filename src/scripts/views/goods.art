@@ -1,0 +1,128 @@
+<div class="main">
+    <div class="head">
+        <img src="/assets/images/arrow.png" />
+        <b>下拉刷新...</b>
+    </div>
+
+
+        <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> <img src="https://h2.appsimg.com/a.appsimg.com/upload/brand/upcb/2019/10/10/26/ias_157067221990456_1135x545_85.jpg" alt=""></div>
+                    <div class="swiper-slide"> <img src="https://h2.appsimg.com/a.appsimg.com/upload/brand/upcb/2019/08/29/132/ias_156706092748557_1135x545_85.jpg" alt=""></div>
+                    <div class="swiper-slide"> <img src="https://h2.appsimg.com/a.appsimg.com/upload/brand/upcb/2019/10/11/56/ias_157077720525506_1135x545_85.jpg" alt=""></div>
+                </div> 
+            </div>
+
+
+    <!-- itemBox -->
+    <div class="itemBox">
+        <h3>
+            <i>今日特价</i>
+            <em class="prolist">
+                <a href="">更多优惠&gt;&gt;</a>
+            </em>
+        </h3>
+        <ul class="goodsList">
+            {{each list}}
+            <li>
+                <a href="#"><img src="{{$value.image_url}}" alt=""></a>
+                <p class="goods-desc">
+                    {{$value.goods_name}}
+                </p>
+                <div class="goods-price"> {{$value.saleprice}}</div>
+                <div class="marketPrice"> {{$value.price}}</div>
+
+            </li>
+            {{/each}}
+        </ul>
+
+
+
+    </div>
+
+    <!--recommend  -->
+    <div class="itemBox">
+        <h3>
+            <i>小编推荐</i>
+        </h3>
+        <dl class="recommend">
+            <dt>
+                <img src="http://img01.iflashbuy.com/img/M00/02/CE/CgoKGVn2yeiAIs07AAI2THqCvtw313.jpg" alt="">
+            </dt>
+            <dd>秋季养生进补正是时候，各位体虚气弱的女性朋友们可别错过了这个进补的大好时节啊。受秋...</dd>
+        </dl>
+    </div>
+
+    <!--preference  -->
+    <div class="itemBox">
+        <h3>
+            <i>精选优店</i>
+        </h3>
+        <ul class="recommend">
+            <li>
+                <img src="http://img01.iflashbuy.com/img/M00/08/21/CgoKG1jLjfeAMBZ8AACY9sVJhE4832.png" alt="优质食品">
+            </li>
+            <li>
+                <img src="http://img01.iflashbuy.com/img/M00/02/B8/CgoKGVjLjciAMLO6AABo8owJ69o555.png" alt="母婴用品">
+            </li>
+            <li>
+                <img src="http://img01.iflashbuy.com/img/M00/08/21/CgoKG1jLjZqAVajsAACqrqp5J-4493.png" alt="彩妆护肤">
+            </li>
+            <li>
+                <img src="http://img01.iflashbuy.com/img/M00/02/B8/CgoKGVjLjTeAZ56FAABV2F9cEFA165.png" alt="家用电器">
+            </li>
+            <li>
+                <img src="http://img01.iflashbuy.com/img/M00/02/B8/CgoKGVjLjW-AXjukAABpG3ZhPZ8738.png" alt="手机数码">
+            </li>
+            <li>
+                <img src="http://img01.iflashbuy.com/img/M00/02/B8/CgoKGVjLjPSAPLyCAABpiwKDaHM493.png" alt="男女服饰">
+            </li>
+            <li>
+                <img src="http://img01.iflashbuy.com/img/M00/08/21/CgoKG1jLjKWAcSgYAAB9pg7vq8A151.png" alt="家居家纺">
+            </li>
+            <li>
+                <img src="http://img01.iflashbuy.com/img/M00/02/B8/CgoKGVjLi4KADHHaAACLbl9cXc8619.png" alt="鞋类箱包">
+            </li>
+            </dl>
+    </div>
+
+    <!--prdLs -->
+    <div class="prdsLs">
+        <h3>
+            <i>商品列表</i>
+        </h3>
+        <ul class="prdUl">
+            <li class="prd-item">
+                <div class="prd-img">
+                    <img src="http://img01.iflashbuy.com/img/M00/01/D5/CgoKGVRItLSAbSewAACV6OqqQcg158.jpg" alt="">
+                </div>
+                <div class="prd-desc">
+                    <div class="p-title">LAUYFEE/亚菲儿 女士香水50ml持久淡香清新淡雅</div>
+                    <div class="p-price">
+                        <span class="p-salep">￥111.22</span>
+                        <span class="p-lowp">￥222.33</span>
+                    </div>
+                    <div class="p-like">6666人喜欢</div>
+                </div>
+            </li>
+
+        </ul>
+
+
+
+    </div>
+    <div class="foot">
+            <img src="/assets/images/arrow.png"/>
+            <b>上拉加载更多...</b>
+      </div>
+
+    <footer>
+        <ul>
+            <li><span class="yo-ico">&#xe632;</span>下载客户端</li>
+            <li>copyright©广州闪购2013-2016版权所有</li>
+
+        </ul>
+    </footer>
+
+
+</div>
