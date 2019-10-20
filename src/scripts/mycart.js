@@ -51,7 +51,8 @@ class Mycart {
     }
     // 渲染localstroage中的数据
     renderer() {
-        let resls = store.get('cart')
+    
+        let resls = store.get('cart')    
         let html = mycartView({ resls })
         $('#root').html(html)
 
@@ -67,8 +68,7 @@ class Mycart {
 
         // 在这里实现按钮的变化      
         $('.item-check').on('tap', function () {           
-            console.log(this);
-            
+            console.log(this);            
             if ( this.onoff) {
                 // console.log(this.onoff)
                 let $img = $(this).children()
@@ -85,11 +85,15 @@ class Mycart {
            // change count
            $('.num-control').on('click', function (evt) {
             let tarEle = evt.srcElement
+            console.log(tarEle)
             let id=$($(tarEle).parents()[2]).attr('data-id')
+            console.log(id)
             let option = $(tarEle).attr('id')
+            console.log(option)
             let temp1 = clone(cart_data.data)
             temp1.forEach((item, index) => {
-                if (item[0].prd_id == id) {
+                console.log(item)
+                if (item[0].goods_id == id) {
                     //    console.log(id)
                     if (option == 'reduce') {
                         item[0].count--
@@ -114,7 +118,7 @@ class Mycart {
             var temp1 = clone(cart_data.data)
             temp1.forEach((item, index) => {
                 console.log(item[0].prd_id);
-                if (item[0].prd_id  == id) {
+                if (item[0].goods_id  == id) {
                     temp1.splice(index,1)
                 }
                 cart_data.data = temp1;

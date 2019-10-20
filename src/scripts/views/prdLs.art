@@ -1,15 +1,15 @@
 {{each prdls}}
-<li class="prd-item" data-id="{{$value.prd_id}}">
+<li class="prd-item" data-id="{{$value.goods_id}}">
     <div class="prd-img">
-        <img src="{{$value.prdImg_url}}" alt="">
+        <img src="{{$value.thumb_url}}" alt="">
     </div>
     <div class="prd-desc">
-        <div class="p-title">{{$value.prd_name}}</div>
+        <div class="p-title">{{$value.goods_name}}</div>
         <div class="p-price">
-            <span class="p-salep">{{$value.prd_saleprice}}</span>
-            <span class="p-lowp">{{$value.prd_price}}</span>
+            <span class="p-salep">{{$value.group_price/100}}</span>
+            <span class="p-lowp">{{$value.normal_price/100}}</span>
         </div>
-        <div class="p-like">{{$value.prd_like}}</div>
+        <div class="p-like">{{$value.sales}}</div>
     </div>
 </li>
 {{/each}}

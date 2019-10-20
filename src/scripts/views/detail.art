@@ -13,17 +13,17 @@
             {{each tarlist}}
             <div class="detail-desc">
                 <ul class="desc-img">
-                    <li><img src="{{$value.prdImg_url}}" alt="">
+                    <li><img src="{{$value.thumb_url}}" alt="">
                     </li>
                 </ul>
 
                 <div class="desc">
                     <div class="desc-price">
-                        <span>{{$value.prd_saleprice}}</span>
-                        <span>{{$value.prd_price}}</span>
+                        <span>{{$value.group_price/100}}</span>
+                        <span>{{$value.normal_price/100}}</span>
                     </div>
                     <ul class="desc-title">
-                        <li>{{$value.prd_name}}</li>
+                        <li>{{$value.goods_name}}</li>
                         <li><img src="http://m.iflashbuy.com/themes/default/images/iconProduct01dis.png" alt=""></li>
                     </ul>
                     <div class="desc-categroy">库存<span>92</span>件</div>

@@ -1,10 +1,8 @@
 const detailView = require('./views/detail.art')
 // const detailModel = require('./models/prdLs')
-const listModel = require('./models/list')
 const BScroll = require('better-scroll')
 const store = require('store')
 import obs from './controllers/addcart'
-
 obs.add("data", saveData);
 obs.add("data", cTotal);
 
@@ -20,8 +18,9 @@ function cTotal(){
 function saveData() {
     // console.log('savadata')
     store.set('cart', cart_data.data)
-    // console.log(store.get('cart'))
+    console.log(store.get('cart'))
     let list=store.get('cart')
+
     list.forEach((item,index)=>{
        
         item[0].count
@@ -46,36 +45,39 @@ Object.defineProperty(cart_data, 'data', {
     }
 })
 
+
+// const url=require('url')
+// console.log(url.parse(location.href).query)
+
+
 class Detail {
     constructor() {
         this.render()
-        this.subId=5571
-       this.res=''
     }
 
     async render() {
-        console.log(cTotal()) 
-        let subId = (location.search.split('&')[0]).split('=')[1]   
-        let target = (location.search.split('&')[1]).split('=')[1]    
-        console.log(subId)
-        console.log(target)//4360937479     
-        let res = await listModel.get(`api/gindex/subject/limited/goods?subject_id=${subId}&page=1&size=50`)      
-        let list  = res.data  
-        let tarlist = []         
-      
-        list.forEach(item => {
-         if(item.goods_id==target){
-            item.total=cTotal()
-            tarlist.unshift(item)
-            console.log(item)
-         }
+        console.log(cTotal())       
+     /*    let total={
+            total:cTotal()
+        } */
+        let target = location.search.split('=')[1]
+        let res = await detailModel.get()
+        let list = res.data
+        let tarlist = []
         
-        });  
+
+        list.forEach((item, index) => {
+            // console.log(item.prd_id)
+            if (target == item.prd_id) {
+                item.total=cTotal()
+                tarlist.unshift(item)
+                console.log(tarlist)
+            }
+        })
+        // console.log(tarlist)
+
         let html = detailView({ tarlist })
         $('#root').html(html)
-   
-
-     
 
         let $main = $('main')
 
@@ -108,28 +110,28 @@ class Detail {
      
         // addcart        
 
-         $('#addCart').on('tap', function () {   
-           
+        $('#addCart').on('tap', function () { 
+         
              let hasSame = cart_data.data.some((item, index) => {
-              
-                if (target == item[0].goods_id) {   
-                    console.log(item)                          
+           
+                if (target == item[0].prd_id) {                  
                     let temp = clone(cart_data.data);                   
-                   temp[index][0].count=$('#amount').val();   
-                   console.log( temp[index][0].count)                       
-                    cart_data.data = temp;                    
+                   temp[index][0].count=$('#amount').val();                
+                    cart_data.data = temp; 
+                   
                     return true;
                 }
                 return false
             })
-            if (!hasSame) {            
+            if (!hasSame) {
+            
                 tarlist[0].count = 1;
                 let temp = clone(cart_data.data);
                 temp.push(tarlist);
                 cart_data.data = temp;
                 
             }
-        }) 
+        })
     }
 }
 new Detail()

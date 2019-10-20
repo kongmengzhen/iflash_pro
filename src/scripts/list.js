@@ -59,14 +59,17 @@ class Detail {
         })
     }
     renderer(list) {
+        // console.log(this)
+        let that=this
         let html = listView({ list })
         $('#root').html(html)
         this.bindevent()
         this.bscroll()
         $('.prdUl li').on('tap', function () {
-            console.log(1)
+            console.log(that.subId)
             let id = $(this).attr('data-id')  
-            console.log(id)            
+            console.log(id)    
+            location.href = `/detail.html?subId=${that.subId}&id=${id}`          
        
                /*     */
           })
@@ -77,13 +80,13 @@ class Detail {
         let query = decodeURIComponent(window.location.search).substr(1)
         let keyword = query.split('=')[1]
         //encodeURI()
-        console.log(keyword)
+        // console.log(keyword)
           
         if (/(.*)[(女)(.*)(衣服)(棉服)(打底裤)](.*)/i.test(keyword)) {
             this.subId=5571
             let res = await listModel.get(`api/gindex/subject/limited/goods?subject_id=${this.subId}&page=1&size=50`)
             let list = this.list = res.data
-            console.log(list)
+            // console.log(list)
             this.renderer(list)
         }else if(/(.*)[(鞋)(.*)(皮鞋)(钱包)](.*)/i.test(keyword)){
             this.subId=5572

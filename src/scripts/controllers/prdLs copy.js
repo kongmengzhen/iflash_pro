@@ -1,6 +1,6 @@
 const prdlsView = require('../views/prdLs.art')
 const BScroll = require('better-scroll')
-const listModel = require('../models/list')
+const prdLsModel = require('../models/prdLs')
 const Swiper =require('../../libs/swiper.min')
 const querystring = require('querystring')
 class Prdls {
@@ -12,7 +12,6 @@ class Prdls {
 
   }
   renderer(prdls) {
-  let that=this
     let lock  = null;  
     let html = prdlsView({ prdls })
     $('.prdUl').html(html)
@@ -22,7 +21,7 @@ class Prdls {
 })
     $('.prdUl li').on('tap', function () {    
       let id = $(this).attr('data-id')      
-      location.href = `/detail.html?sudId=${that.subId}&id=${id}`  
+      location.href = `/detail.html?id=${id}`  
     })
     $('.search').on('tap',function(){
       // console.log($('#ipt').val())
@@ -50,13 +49,11 @@ class Prdls {
     //    location.hash = `detail/${id}`
   }
   async render() {
-    this.subId=5578
-    
     let that = this
     let $main = $('main')
-    let res = await listModel.get(`api/gindex/subject/limited/goods?subject_id=${this.subId}&page=1&size=50`)
+    let res = await prdLsModel.get()
     let prdls = res.data
-      console.log(prdls)
+    //  console.log(prdls)
     this.renderer(prdls)
 
 
@@ -69,11 +66,10 @@ class Prdls {
     bScroll.scrollBy(0, -40)
     bScroll.on('scrollEnd', async function () {
       if (this.y >= 0) {
-        that.subId=5577
         // 切换图片
         $imgHead.attr('src', '/assets/images/ajax-loader.gif')
         // 然后这个时候去发送ajax  请求
-        let res = await listModel.get(`api/gindex/subject/limited/goods?subject_id=${that.subId}&page=1&size=50`)
+        let res = await prdLsModel.get()
 
         let { data: list } = res
         that.ranum.unshift(list[random()])
@@ -88,9 +84,8 @@ class Prdls {
       // 下拉加载更多
 
       if (this.maxScrollY >= this.y) {
-        that.subId=5579
         $imgFoot.attr('src', '/assets/images/ajax-loader.gif')
-        let res = await listModel.get(`api/gindex/subject/limited/goods?subject_id=${that.subId}&page=1&size=50`)
+        let res = await prdLsModel.get()
         let { data: list } = res
         that.list = [...that.list, ...list]
         that.renderer(that.list)
